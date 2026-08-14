@@ -1,0 +1,3 @@
+Hello, World!
+[IMAGE]: {path/to/image.png}
+This above is an image to demonstrate the image element.
