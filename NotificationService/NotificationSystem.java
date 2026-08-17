@@ -16,17 +16,6 @@ class SimpleNotification implements Notification {
     }
 }
 
-class EmailNotification implements Notification {
-    private String content;
-    public EmailNotification(String content) {
-        this.content = "[EMAIL]" + content;
-    }
-
-    @Override
-    public String getContent() {
-        return content;
-    }
-}
 
 // Decorator Design Pattern
 
@@ -214,11 +203,9 @@ public class NotificationSystem {
         Notification N1 = new TimeStampDecorator(new SimpleNotification("New Video Just dropped !!"));
         Notification N2 = new TimeStampDecorator(new SimpleNotification("Somebody liked your post!!"));
         Notification N3 = new TimeStampDecorator(new SimpleNotification("Somebody replied to your comment"));
-        Notification N4 = new TimeStampDecorator(new EmailNotification("Somebody replied to your EMAIL!!"));
 
         service.sendNotification(N1);
         service.sendNotification(N2);
         service.sendNotification(N3);
-        service.sendNotification(N4);
     }
 }
